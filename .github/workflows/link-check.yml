@@ -1,0 +1,56 @@
+name: Link Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - '.github/workflows/link-check.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+  schedule:
+    # Weekly link check every Monday at 02:00 UTC
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run lychee link checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --max-retries 2
+            --retry-wait-time 5
+            --timeout 20
+            --accept '200,201,202,204,206,301,302,303,307,308,403,429'
+            --exclude-file .github/lychee-exclude.txt
+            './README.md'
+            './CONTRIBUTING.md'
+          fail: true
+          format: markdown
+          output: ./link-check-report.md
+
+      - name: Upload report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: ./link-check-report.md
+
+      - name: Create issue on scheduled failure
+        if: failure() && github.event_name == 'schedule'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: '🔗 Weekly link check failed'
+          content-filepath: ./link-check-report.md
+          labels: maintenance, broken-links

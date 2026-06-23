@@ -1,0 +1,18 @@
+# Excluded URLs for lychee link checker
+# These domains are known to block bots or rate-limit automated checks
+
+# X / Twitter blocks bots
+^https://(www\.)?(twitter|x)\.com/
+
+# LinkedIn blocks bots
+^https://(www\.)?linkedin\.com/
+
+# Some services use bot challenges
+^https://github\.com/sindresorhus/awesome$
+
+# Anchors within the same file (lychee handles these)
+^#
+
+# Localhost
+^http://localhost
+^http://127\.0\.0\.1
