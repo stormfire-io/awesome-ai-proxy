@@ -110,6 +110,9 @@ For reference — the upstream providers themselves.
 
 Foundational and recent writing on AI API access, gateway design, and crypto payment for AI:
 
+- [Why I Stopped Paying for AI APIs with My Credit Card](https://stormfire.io/blog/why-i-stopped-paying-for-ai-apis-with-my-credit-card) — The Stripe risk model and AI access. *(Stormfire blog)*
+- [OpenRouter Alternative for Crypto Users](https://stormfire.io/blog/openrouter-alternative-crypto) — Side-by-side comparison and migration guide. *(Stormfire blog)*
+- [How to Pay for ChatGPT API with USDT](https://stormfire.io/blog/pay-chatgpt-with-usdt) — Step-by-step guide. *(Stormfire blog)*
 - [Awesome Crypto AI](https://github.com/crypto-ai/awesome-crypto-ai) — Tangent list on AI x Crypto. *(Community)*
 
 > If you've written a high-quality, technically substantive article on these topics, open a PR.
