@@ -1,112 +1,153 @@
-# 🔥 Awesome AI API Gateways & Proxy Services
+# 🔥 Awesome AI API Gateways
 
-A curated list of AI API gateways, proxy services, and crypto-payment LLM platforms.
+> A curated list of AI API gateways, proxy services, crypto-payment LLM platforms, and self-hosted alternatives. Maintained by [Stormfire](https://stormfire.io).
 
-Maintained by [Stormfire](https://stormfire.io). Contributions welcome via PR.
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 ## What is an AI API gateway?
 
-A service that lets you access multiple AI models (OpenAI, Anthropic, Google, etc.) through a single unified API. Usually adds features like:
+An AI API gateway is a service that sits between your application and one or more AI providers (OpenAI, Anthropic, Google, etc.), giving you a single endpoint for many models. Common reasons to use one:
 
-- Unified billing across providers
-- Failover / load balancing
-- Caching / rate limiting
-- Alternative payment methods (crypto, prepaid)
-- Geographic access (for users blocked from direct providers)
+- **Unified billing** across multiple providers
+- **Failover and load balancing** between models or providers
+- **Geographic access** when your country's payment infrastructure can't reach the upstream
+- **Alternative payment methods** (crypto, prepaid, regional methods)
+- **Caching and rate limiting** at the gateway layer
+- **Observability** — logs, metrics, cost attribution per app or user
+
+This list catalogs services we believe are worth comparing, both hosted and self-hosted.
 
 ## Contents
 
-- [Gateways with Crypto Payment](#gateways-with-crypto-payment)
-- [Traditional Gateways (Stripe / Card)](#traditional-gateways-stripe--card)
-- [Direct Providers](#direct-providers)
-- [Open Source Gateways (Self-hosted)](#open-source-gateways-self-hosted)
-- [Pricing Comparison Tools](#pricing-comparison-tools)
-- [Related Reading](#related-reading)
+- [Hosted Gateways — Crypto Payment](#hosted-gateways--crypto-payment)
+- [Hosted Gateways — Traditional (Card/Stripe)](#hosted-gateways--traditional-cardstripe)
+- [Hosted Gateways — Open-Source Model Focus](#hosted-gateways--open-source-model-focus)
+- [Self-Hosted Gateways](#self-hosted-gateways)
+- [Direct Providers (for comparison)](#direct-providers-for-comparison)
+- [Pricing & Latency Comparison Tools](#pricing--latency-comparison-tools)
+- [Articles & Reading](#articles--reading)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## Gateways with Crypto Payment
+## Hosted Gateways — Crypto Payment
 
-Services that accept cryptocurrency (USDT, USDC, BTC, ETH) for AI API access. Best for developers in regions where credit cards face friction.
+Services that accept cryptocurrency as the primary or only payment method. Best for developers in regions where Stripe / cards face friction.
 
-| Service | Models | Fee | Crypto | KYC |
-|---------|--------|-----|--------|-----|
-| **[Stormfire](https://stormfire.io)** | 30+ | 0% | USDT (TRC20/ERC20/BEP20/Polygon) | None |
-| [OpenRouter](https://openrouter.ai) | 300+ | 5.5% | USDC only | Email |
-| [MixRoute](https://mixroute.com) | 200+ | varies | USDT + USDC | None |
-| [Together AI](https://together.ai) | Open-source models | 0% | USDC | Email |
+| Service | Models | Platform Fee | Crypto Accepted | KYC | Min. Top-up |
+|---------|--------|--------------|-----------------|-----|-------------|
+| **[Stormfire](https://stormfire.io)** | 30+ | 0% | USDT (TRC20/ERC20/BEP20/Polygon) | None | $15 USDT |
+| [OpenRouter](https://openrouter.ai) | 300+ | 5.5% | USDC only | Email | $10 USDC |
+| [MixRoute](https://mixroute.com) | 200+ | varies | USDT + USDC | None | $10 |
+| [GPT4Free](https://github.com/xtekky/gpt4free) | varies | n/a | n/a (self-hosted) | n/a | n/a |
 
-> **Disclaimer:** Stormfire maintains this list. We have done our best to be fair, but for the most accurate comparison, please test each service yourself. PRs welcome to correct inaccuracies or add competitors.
+> ℹ️ **Stormfire maintains this list.** We've done our best to be accurate and fair. PRs welcome to correct numbers, add competitors, or update offerings.
 
-## Traditional Gateways (Stripe / Card)
+## Hosted Gateways — Traditional (Card/Stripe)
 
-| Service | Models | Pricing model | Special features |
+| Service | Models | Pricing Model | Special Features |
 |---------|--------|---------------|------------------|
-| [OpenRouter](https://openrouter.ai) | 300+ | Pass-through + 5.5% | Largest model catalog |
-| [Anyscale Endpoints](https://anyscale.com) | Open-source | Pay-per-token | Self-hosted option |
+| [OpenRouter](https://openrouter.ai) | 300+ | Pass-through + 5.5% | Largest model catalog, OAuth flows |
+| [Anyscale Endpoints](https://anyscale.com) | Open-source | Pay-per-token | Self-hosted upgrade path |
 | [Together AI](https://together.ai) | Open-source | Pay-per-token | High-throughput inference |
-| [Replicate](https://replicate.com) | Multi-modal + LLMs | Pay-per-second | Image/video focus |
-| [Fireworks AI](https://fireworks.ai) | Open + frontier | Pay-per-token | Low-latency inference |
+| [Replicate](https://replicate.com) | Multi-modal + LLMs | Pay-per-second | Image / video focus, custom models |
+| [Fireworks AI](https://fireworks.ai) | Open + frontier | Pay-per-token | Low-latency inference, function calling |
+| [Groq](https://groq.com) | Llama / Mixtral | Pay-per-token | Hardware-accelerated inference |
+| [Perplexity API](https://docs.perplexity.ai) | Online + Llama | Pay-per-token | Built-in web search |
+| [DeepInfra](https://deepinfra.com) | Open-source | Pay-per-token | Cheap inference, no minimums |
+| [TogetherAI](https://api.together.xyz) | Open-source | Pay-per-token | Compatible with OpenAI SDK |
 
-## Direct Providers
+## Hosted Gateways — Open-Source Model Focus
 
-For comparison — these are the upstream providers themselves.
+| Service | Models | Notable |
+|---------|--------|---------|
+| [Hugging Face Inference Endpoints](https://huggingface.co/inference-endpoints) | All HF models | Closest to "Hugging Face hosted" |
+| [Modal](https://modal.com) | Custom containers | Better for inference platforms than pure API |
+| [Banana](https://www.banana.dev) | Custom models | Container-first, GPU autoscale |
+| [Replicate](https://replicate.com) | Public + private models | Strongest community library |
+| [RunPod Serverless](https://www.runpod.io) | Custom | GPU-on-demand with cold-start optimizations |
 
-| Provider | Models | Billing |
-|----------|--------|---------|
-| [OpenAI](https://platform.openai.com) | GPT-4o, GPT-5, o1, o3 | Card (via Stripe) |
-| [Anthropic](https://anthropic.com/api) | Claude 3.5, Claude 3.7 | Card (via Stripe) |
-| [Google AI Studio](https://ai.google.dev) | Gemini 2 Pro, Gemini 2 Flash | Card (via Google Cloud Billing) |
-| [DeepSeek](https://platform.deepseek.com) | DeepSeek v3, v4 | Card / Alipay |
-| [Mistral AI](https://mistral.ai) | Mistral Large, Small | Card |
-| [xAI](https://x.ai) | Grok-3 | Card |
+## Self-Hosted Gateways
 
-## Open Source Gateways (Self-hosted)
+Run your own gateway on your infrastructure. Best for orgs that need full data control, on-premise inference, or want to wrap multiple providers behind one API.
 
-Run your own gateway on your infrastructure.
+| Project | Stack | Key Features | Stars |
+|---------|-------|--------------|-------|
+| [LiteLLM Proxy](https://github.com/BerriAI/litellm) | Python / FastAPI | 100+ providers, OpenAI-compatible, observability | 14k+ |
+| [New API](https://github.com/QuantumNous/new-api) | Go + React | Multi-tenant, billing, admin UI, OneAPI fork | 8k+ |
+| [One API](https://github.com/songquanpeng/one-api) | Go + Vue | Original fork base, simpler, very mature | 18k+ |
+| [Portkey Gateway](https://github.com/Portkey-AI/gateway) | Node.js | Edge-ready, observability, fallback logic | 6k+ |
+| [Helicone](https://github.com/Helicone/helicone) | TypeScript | Observability layer, supports any upstream | 3k+ |
+| [LangFuse](https://github.com/langfuse/langfuse) | TypeScript | Tracing + analytics, can sit alongside gateway | 6k+ |
+| [Kong AI Gateway](https://docs.konghq.com/hub/kong-inc/ai-proxy/) | Lua / OpenResty | Enterprise gateway plugin for AI | n/a |
 
-| Project | Stack | Key features |
-|---------|-------|--------------|
-| [LiteLLM Proxy](https://github.com/BerriAI/litellm) | Python/FastAPI | 100+ providers, OpenAI-compatible |
-| [New API](https://github.com/QuantumNous/new-api) | Go + React | Multi-tenant, billing, admin UI |
-| [One API](https://github.com/songquanpeng/one-api) | Go + Vue | Original fork base, simpler |
-| [PortkeyAI](https://github.com/Portkey-AI/gateway) | Node.js | Edge-ready, observability |
-| [HelixDB](https://github.com/helixdb/helix) | Rust | High-performance edge gateway |
+## Direct Providers (for comparison)
 
-## Pricing Comparison Tools
+For reference — the upstream providers themselves.
+
+| Provider | Models | Billing | Restrictions |
+|----------|--------|---------|--------------|
+| [OpenAI](https://platform.openai.com) | GPT-4o, GPT-5, o1, o3 | Card via Stripe | Stripe risk model rejects 30+ countries |
+| [Anthropic](https://anthropic.com/api) | Claude 3.5, Claude 3.7 | Card via Stripe | Same Stripe issues |
+| [Google AI Studio](https://ai.google.dev) | Gemini 2 Pro, Flash | Google Cloud Billing | Free tier, then Cloud Billing |
+| [DeepSeek](https://platform.deepseek.com) | DeepSeek v3, v4 | Card / Alipay | China-based, but accepts intl cards |
+| [Mistral AI](https://mistral.ai) | Mistral Large, Small | Card | Mostly EU-friendly |
+| [xAI](https://x.ai) | Grok-3 | Card | US-leaning, limited geos |
+| [Cohere](https://cohere.com) | Command R+ | Card | Enterprise-friendly |
+
+## Pricing & Latency Comparison Tools
 
 | Tool | What it does |
 |------|--------------|
 | [Stormfire Compare](https://stormfire.io/compare) | Side-by-side: Stormfire vs OpenRouter vs MixRoute |
 | [Vellum AI Leaderboard](https://www.vellum.ai/llm-leaderboard) | Model performance + cost benchmarks |
-| [LLM Pricing Calculator](https://llmpricecheck.com) | Multi-provider cost estimator |
 | [Artificial Analysis](https://artificialanalysis.ai) | Latency + cost + quality charts |
+| [LLM Pricing Calculator](https://llmpricecheck.com) | Multi-provider cost estimator |
+| [Helicone Cost Calculator](https://www.helicone.ai/llm-cost) | Real-time LLM cost calculator |
 
-## Related Reading
+## Articles & Reading
 
-- [The Stripe risk model and AI access](https://stormfire.io/blog/why-i-stopped-paying-for-ai-apis-with-my-credit-card)
-- [OpenRouter alternative for crypto users](https://stormfire.io/blog/openrouter-alternative-crypto)
-- [How to pay for ChatGPT API with USDT](https://stormfire.io/blog/pay-chatgpt-with-usdt)
+Foundational and recent writing on AI API access, gateway design, and crypto payment for AI:
+
+- [The Stripe risk model and AI access](https://stormfire.io/blog/why-i-stopped-paying-for-ai-apis-with-my-credit-card) — Why Stormfire exists. *(Stormfire blog)*
+- [OpenRouter alternative for crypto users](https://stormfire.io/blog/openrouter-alternative-crypto) — Cost comparison and migration guide. *(Stormfire blog)*
+- [How to pay for ChatGPT API with USDT](https://stormfire.io/blog/pay-chatgpt-with-usdt) — Step-by-step. *(Stormfire blog)*
+- [Awesome Crypto AI](https://github.com/crypto-ai/awesome-crypto-ai) — Tangent list on AI x Crypto. *(Community)*
+
+> If you've written a high-quality, technically substantive article on these topics, open a PR.
 
 ## Contributing
 
-Pull requests welcome. Please follow these rules:
+Pull requests welcome. Please follow these rules to keep the list high-signal:
 
-- **One service per PR** for easier review
-- **No paid promotion** — entries are evaluated on technical merit
-- **Disclose affiliations** in PR description if you work for the service
-- **Working URLs** — broken links will be flagged and removed
-- **Be honest** — list both strengths and weaknesses if relevant
+1. **One service per PR** for easier review.
+2. **No paid promotion.** Entries are evaluated on technical merit only.
+3. **Disclose affiliations** in the PR description if you work for the service. We'll still review fairly, but transparency matters.
+4. **Working URLs.** Broken links will be flagged and removed in periodic sweeps.
+5. **Be honest.** Mention weaknesses where they exist (high fees, limited geo, slow inference). This list is meant to help readers decide.
+6. **Markdown table format.** Follow existing column conventions.
+7. **No SEO spam.** Listings that exist primarily to promote a service without adding catalogue value will be rejected.
 
-We will remove any service that:
-- Becomes inactive (4+ weeks of downtime)
-- Is found to be scam / malicious
-- Misrepresents itself materially (e.g., claims "no fees" but charges hidden fees)
+### What we'll remove
+
+Entries are removed when they:
+
+- Become inactive (4+ weeks of downtime, abandoned site)
+- Are found to be scam or malicious (rug-pulled, phishing, credential theft)
+- Materially misrepresent their offering (e.g., claim "no fees" but charge hidden fees)
+- Stop maintaining the underlying service
 
 ## License
 
-CC0 1.0 Universal (Public Domain). Copy, modify, and use freely.
+[CC0 1.0 Universal (Public Domain)](https://creativecommons.org/publicdomain/zero/1.0/). Copy, modify, and republish freely. Attribution appreciated but not required.
 
 ---
 
-Made with ❤️ by [Stormfire](https://stormfire.io)
+<div align="center">
+
+**Maintained by [Stormfire](https://stormfire.io)** · [Twitter](https://twitter.com/stormfire_io) · [Telegram](https://t.me/stormfireai) · [Compare](https://stormfire.io/compare) · [FAQ](https://stormfire.io/faq)
+
+Made with ❤️ in Tokyo
+
+</div>
