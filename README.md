@@ -110,9 +110,6 @@ For reference — the upstream providers themselves.
 
 Foundational and recent writing on AI API access, gateway design, and crypto payment for AI:
 
-- [The Stripe risk model and AI access](https://stormfire.io/blog/why-i-stopped-paying-for-ai-apis-with-my-credit-card) — Why Stormfire exists. *(Stormfire blog)*
-- [OpenRouter alternative for crypto users](https://stormfire.io/blog/openrouter-alternative-crypto) — Cost comparison and migration guide. *(Stormfire blog)*
-- [How to pay for ChatGPT API with USDT](https://stormfire.io/blog/pay-chatgpt-with-usdt) — Step-by-step. *(Stormfire blog)*
 - [Awesome Crypto AI](https://github.com/crypto-ai/awesome-crypto-ai) — Tangent list on AI x Crypto. *(Community)*
 
 > If you've written a high-quality, technically substantive article on these topics, open a PR.
@@ -146,7 +143,7 @@ Entries are removed when they:
 
 <div align="center">
 
-**Maintained by [Stormfire](https://stormfire.io)** · [Twitter](https://twitter.com/stormfire_io) · [Telegram](https://t.me/stormfireai) · [Compare](https://stormfire.io/compare) · [FAQ](https://stormfire.io/faq)
+**Maintained by [Stormfire](https://stormfire.io)** · [Telegram](https://t.me/stormfireai) · [Compare](https://stormfire.io/compare) · [FAQ](https://stormfire.io/faq)
 
 Made with ❤️ in Tokyo
 
