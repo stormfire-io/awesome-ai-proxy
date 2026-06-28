@@ -23,6 +23,7 @@ This list catalogs services we believe are worth comparing, both hosted and self
 - [Hosted Gateways — Traditional (Card/Stripe)](#hosted-gateways--traditional-cardstripe)
 - [Hosted Gateways — Open-Source Model Focus](#hosted-gateways--open-source-model-focus)
 - [Self-Hosted Gateways](#self-hosted-gateways)
+- [Free-Tier Aggregator Gateways](#free-tier-aggregator-gateways)
 - [Direct Providers (for comparison)](#direct-providers-for-comparison)
 - [Pricing & Latency Comparison Tools](#pricing--latency-comparison-tools)
 - [Articles & Reading](#articles--reading)
@@ -40,7 +41,6 @@ Services that accept cryptocurrency as the primary or only payment method. Best 
 | **[Stormfire](https://stormfire.io)** | 30+ | 0% | USDT (TRC20/ERC20/BEP20/Polygon) | None | $15 USDT |
 | [OpenRouter](https://openrouter.ai) | 300+ | 5.5% | USDC only | Email | $10 USDC |
 | [MixRoute](https://mixroute.com) | 200+ | varies | USDT + USDC | None | $10 |
-| [GPT4Free](https://github.com/xtekky/gpt4free) | varies | n/a | n/a (self-hosted) | n/a | n/a |
 
 > ℹ️ **Stormfire maintains this list.** We've done our best to be accurate and fair. PRs welcome to correct numbers, add competitors, or update offerings.
 
@@ -81,6 +81,20 @@ Run your own gateway on your infrastructure. Best for orgs that need full data c
 | [Helicone](https://github.com/Helicone/helicone) | TypeScript | Observability layer, supports any upstream | 3k+ |
 | [LangFuse](https://github.com/langfuse/langfuse) | TypeScript | Tracing + analytics, can sit alongside gateway | 6k+ |
 | [Kong AI Gateway](https://docs.konghq.com/hub/kong-inc/ai-proxy/) | Lua / OpenResty | Enterprise gateway plugin for AI | n/a |
+
+## Free-Tier Aggregator Gateways
+
+Self-hosted projects that work by stitching together free tiers from multiple providers. Different from traditional self-hosted gateways: the value proposition is "don't pay, route through free quotas" rather than "unify billing across paid providers."
+
+Best for hobby projects, learning, and personal use. **Not suitable for production** — free tiers have unpredictable availability, no SLA, and ToS that may prohibit aggregation.
+
+| Project | Stack | Approach | Notable |
+|---------|-------|----------|---------|
+| [OmniRoute](https://github.com/diegosouzapw/OmniRoute) | TypeScript | 160+ providers / 50+ free sources; RTK+Caveman compression saves 15-95% tokens | Routes Claude Code / Codex / Cursor / Cline / Copilot through free Claude/GPT/Gemini tiers; Desktop + PWA |
+| [freellmapi](https://github.com/tashfeenahmed/freellmapi) | Python | Aggregates 16 free-tier providers behind one OpenAI-compatible `/v1` endpoint | ~1.7B tokens/month aggregate free budget; minimal config |
+| [GPT4Free](https://github.com/xtekky/gpt4free) | Python | Reverse-engineers public chat UIs to expose a free API | Long-running flagship of the category; cat-and-mouse with providers |
+
+> ⚠️ **Note on ToS:** Most free-tier aggregators sit in legally gray territory. Provider ToS typically prohibits programmatic aggregation of personal free quotas for redistribution. Use at your own risk for personal / learning purposes; do not rely on these for paying customers.
 
 ## Direct Providers (for comparison)
 
