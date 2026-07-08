@@ -50,7 +50,7 @@ Services that accept cryptocurrency as the primary or only payment method. Best 
 |---------|--------|---------------|------------------|
 | [OpenRouter](https://openrouter.ai) | 300+ | Pass-through + 5.5% | Largest model catalog, OAuth flows |
 | [Anyscale Endpoints](https://anyscale.com) | Open-source | Pay-per-token | Self-hosted upgrade path |
-| [cocodot](https://cocodot.co) | Claude / GPT / Gemini / DeepSeek | Pay-per-token | Alipay (CNY) payments, OpenAI + Anthropic compatible, works with Claude Code; model integrity verifiable via open-source [LLMprobe](https://github.com/oncesylvia/LLMprobe). Weakness: site is Chinese-first, CN-market focused |
+| [cocodot](https://cocodot.co) | Claude / GPT / Gemini / DeepSeek | Pay-per-token | Alipay (CNY) payments, OpenAI + Anthropic compatible, works with Claude Code; model integrity verifiable via open-source [LLMprobe](https://github.com/cocodot2026/LLMprobe). Weakness: site is Chinese-first, CN-market focused |
 | [Together AI](https://together.ai) | Open-source | Pay-per-token | High-throughput inference |
 | [Replicate](https://replicate.com) | Multi-modal + LLMs | Pay-per-second | Image / video focus, custom models |
 | [Fireworks AI](https://fireworks.ai) | Open + frontier | Pay-per-token | Low-latency inference, function calling |
