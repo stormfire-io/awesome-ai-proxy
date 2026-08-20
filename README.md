@@ -49,6 +49,7 @@ Services that accept cryptocurrency as the primary or only payment method. Best 
 | Service | Models | Pricing Model | Special Features |
 |---------|--------|---------------|------------------|
 | [OpenRouter](https://openrouter.ai) | 300+ | Pass-through + 5.5% | Largest model catalog, OAuth flows |
+| [SandBase](https://github.com/sandbaseai/cli) | 2,000+ | Usage-based | Apache-2.0 CLI and local MCP bridge for 25 AI clients; availability and pricing vary by model |
 | [Anyscale Endpoints](https://anyscale.com) | Open-source | Pay-per-token | Self-hosted upgrade path |
 | [Together AI](https://together.ai) | Open-source | Pay-per-token | High-throughput inference |
 | [Replicate](https://replicate.com) | Multi-modal + LLMs | Pay-per-second | Image / video focus, custom models |
