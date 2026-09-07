@@ -75,6 +75,7 @@ Run your own gateway on your infrastructure. Best for orgs that need full data c
 | Project | Stack | Key Features | Stars |
 |---------|-------|--------------|-------|
 | [LiteLLM Proxy](https://github.com/BerriAI/litellm) | Python / FastAPI | 100+ providers, OpenAI-compatible, observability | 14k+ |
+| [Bifrost](https://github.com/maximhq/bifrost) | Go | 1000+ models, OpenAI-compatible, adaptive load balancing, guardrails | 7.8k+ |
 | [New API](https://github.com/QuantumNous/new-api) | Go + React | Multi-tenant, billing, admin UI, OneAPI fork | 8k+ |
 | [One API](https://github.com/songquanpeng/one-api) | Go + Vue | Original fork base, simpler, very mature | 18k+ |
 | [Portkey Gateway](https://github.com/Portkey-AI/gateway) | Node.js | Edge-ready, observability, fallback logic | 6k+ |
