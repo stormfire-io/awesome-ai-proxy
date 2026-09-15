@@ -128,6 +128,7 @@ Foundational and recent writing on AI API access, gateway design, and crypto pay
 - [OpenRouter Alternative for Crypto Users](https://stormfire.io/blog/openrouter-alternative-crypto) — Side-by-side comparison and migration guide. *(Stormfire blog)*
 - [How to Pay for ChatGPT API with USDT](https://stormfire.io/blog/pay-chatgpt-with-usdt) — Step-by-step guide. *(Stormfire blog)*
 - [Awesome Crypto AI](https://github.com/crypto-ai/awesome-crypto-ai) — Tangent list on AI x Crypto. *(Community)*
+- [HostDeFi](https://hostdefi.com) — free token-safety scanner grading tokens A+–F from on-chain checks (mint/freeze authority, liquidity, holder concentration) across Solana + 7 EVM chains. Keyless REST API, hosted MCP, x402 endpoints.
 
 > If you've written a high-quality, technically substantive article on these topics, open a PR.
 
