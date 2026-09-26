@@ -57,6 +57,8 @@ Services that accept cryptocurrency as the primary or only payment method. Best 
 | [Perplexity API](https://docs.perplexity.ai) | Online + Llama | Pay-per-token | Built-in web search |
 | [DeepInfra](https://deepinfra.com) | Open-source | Pay-per-token | Cheap inference, no minimums |
 | [TogetherAI](https://api.together.xyz) | Open-source | Pay-per-token | Compatible with OpenAI SDK |
+| [APIClaw](https://apiclaw.biz) | Claude / GPT / Kimi / Qwen / DeepSeek / GLM | Flat-rate $19–$129/mo | OpenAI-compatible API with 50 free trial requests |
+
 
 ## Hosted Gateways — Open-Source Model Focus
 
