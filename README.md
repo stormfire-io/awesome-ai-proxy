@@ -56,7 +56,9 @@ Services that accept cryptocurrency as the primary or only payment method. Best 
 | [Groq](https://groq.com) | Llama / Mixtral | Pay-per-token | Hardware-accelerated inference |
 | [Perplexity API](https://docs.perplexity.ai) | Online + Llama | Pay-per-token | Built-in web search |
 | [DeepInfra](https://deepinfra.com) | Open-source | Pay-per-token | Cheap inference, no minimums |
+| [MuAPI](https://muapi.ai) | 500+ generative-media models | Pay per generation | Unified image, video, audio, and 3D API; asynchronous jobs; OpenAI-compatible endpoints |
 | [TogetherAI](https://api.together.xyz) | Open-source | Pay-per-token | Compatible with OpenAI SDK |
+| [MuAPI](https://muapi.ai) | Image, video, audio and text models | Pay-per-generation | One API key and one async job API across generative media models |
 
 ## Hosted Gateways — Open-Source Model Focus
 
