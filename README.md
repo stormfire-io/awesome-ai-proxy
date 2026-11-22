@@ -41,6 +41,7 @@ Services that accept cryptocurrency as the primary or only payment method. Best 
 | **[Stormfire](https://stormfire.io)** | 30+ | 0% | USDT (TRC20/ERC20/BEP20/Polygon) | None | $15 USDT |
 | [OpenRouter](https://openrouter.ai) | 300+ | 5.5% | USDC only | Email | $10 USDC |
 | [MixRoute](https://mixroute.com) | 200+ | varies | USDT + USDC | None | $10 |
+| [Kantro](https://kantro.dev) | 31 | 0% | USDT (BEP20/TRC20) | Email | $1 floor (varies by network) |
 
 > ℹ️ **Stormfire maintains this list.** We've done our best to be accurate and fair. PRs welcome to correct numbers, add competitors, or update offerings.
 
