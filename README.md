@@ -57,6 +57,7 @@ Services that accept cryptocurrency as the primary or only payment method. Best 
 | [Perplexity API](https://docs.perplexity.ai) | Online + Llama | Pay-per-token | Built-in web search |
 | [DeepInfra](https://deepinfra.com) | Open-source | Pay-per-token | Cheap inference, no minimums |
 | [TogetherAI](https://api.together.xyz) | Open-source | Pay-per-token | Compatible with OpenAI SDK |
+| [321AI](https://321ai.cc) | 165+ (Claude, GPT, Gemini, DeepSeek) | Per-token (text), per-request (image/video) | Marketplace of independent suppliers bidding live prices; OpenAI and Anthropic compatible; per-model quotes, supplier count, success rate and cache-read price; failures not billed; Alipay/WeChat/USDT |
 
 ## Hosted Gateways — Open-Source Model Focus
 
